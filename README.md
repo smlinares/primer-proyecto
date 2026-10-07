@@ -1,4 +1,4 @@
-# Primer Proyecto
+# sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
@@ -15,7 +15,7 @@ To recreate this project with the same configuration:
 
 ```sh
 # recreate this project
-pnpm dlx sv@1.0.1 create --template minimal --types ts --add tailwindcss="plugins:typography,forms" --install pnpm primer-proyecto
+pnpm dlx sv@1.1.1 create --template minimal --types ts --add tailwindcss="plugins:typography,forms" --install pnpm ./
 ```
 
 ## Adding features
