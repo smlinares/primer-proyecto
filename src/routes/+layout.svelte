@@ -18,11 +18,13 @@
     <a href="/">Netizen</a>
     </div>
 
-    <div>
-    <button>SFX</button>
-    <button>CLI</button>
-    <button>PWR OFF</button>
-    </div>
+    <section>
+      <div>
+        <button>SFX</button>
+        <button>CLI</button>
+        <button>PWR OFF</button>
+      </div>
+    </section>
 
   </div>
 
