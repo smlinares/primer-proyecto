@@ -13,28 +13,30 @@
 
 <header>
 
-  <div id="header-container">
+  <div id="header-container" class="flex justify-between items-center px-5 py-3 bg-[#160D26] text-white">
 
-    <div id="logo">
-      <a href="/">Netizen</a>
+    <div id="logo" class="flex justify-start flex-1 font-bold text-[#00FF66]">
+      <a href="/">NETIZEN</a>
     </div>
 
-    <div id="nav-links">
+    <div id="nav-links" class="flex items-center justify-center gap-6 flex-1 font-semibold text-gray-300">
       <!--Enlaces de navegación-->
-      <a href="#Historia">
-      <Icon icon="mdi-light:home" width={32}/>
-    </a>
+      <a href="#Historia">Historia</a>
       <a href="#Funcionamiento">Funcionamiento</a>
       <a href="#Cultura">Cultura</a>
+
+      <!--Botón Reproductor-->
+      <button id="music-button">
+        <Icon icon="mdi-light:music" width={32}/>
+      </button>
     </div>
-    <!--Botón Reproductor-->
-    <button id="music-button">Música</button>
 
-    <div id="store-links">
-
+    <div id="store-links" class="flex justify-end items-center gap-4 flex-1 font-semibold text-gray-300">
       <a href="/Tienda">Tienda</a>
-      <button id="cart-button">Carrito</button>
 
+      <button id="cart-button">
+        <Icon icon="mdi-light:cart" width={32}/>
+      </button>
     </div>
 
   </div>
@@ -43,14 +45,12 @@
 
 {@render children()}
 
-<footer>
+<footer class="flex justify-between items-center p-4 bg-[#160D26] text-gray-300">
+    <div id="left-side" class="flex justify-start">
+      <p>© Netizen EST. 1998, hecho por @smlinares</p>
+    </div>
 
-  <div id="left-side">
-    <p>© Netizen EST. 1998, hecho por @smlinares</p>
-  </div>
-
-  <div id="right-side">
-    <a href="https://www.github.com/smlinares" target="_blank">GitHub</a>
-  </div>
-
-</footer>
+    <div id="right-side" class="flex justify-end">
+      <a href="https://www.github.com/smlinares" target="_blank">GitHub</a>
+    </div>
+  </footer>
