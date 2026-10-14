@@ -1,3 +1,12 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@font-face {
+  font-family: Krypton;
+  src: url("/krypton-font.woff2");
+}
+
+@theme {
+  --font-title: 'Krypton';
+}

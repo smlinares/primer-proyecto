@@ -1,7 +1,7 @@
 <div id="body" class="bg-[#0C0716] px-24 py-12 text-white flex gap-10 items-center">
 
     <div id="hero-content" class="justify-center flex-1 items-center text-base">
-        <h1 id="welcome-text" class="font-bold text-white">
+        <h1 id="welcome-text" class="font-bold text-white text-3xl font-title">
             Un recorrido por la historia de la Web
         </h1>
         <p id="welcome-paragraph" class="text-gray-400 py-4 text-justify">
