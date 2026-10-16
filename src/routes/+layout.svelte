@@ -12,35 +12,30 @@
 </svelte:head>
 
 <header>
-
-  <div id="header-container" class="flex justify-between items-center px-5 py-3 bg-[#160D26] text-white">
-
-    <div id="logo" class="flex justify-start flex-1 font-bold text-[#00FF66]">
+  <div id="header-container" class="flex flex-1 justify-between items-center px-5 py-3 bg-[#160D26] text-white">
+    <!-- Logo container (flex-1 balances with store-links) -->
+    <div id="logo" class="flex flex-1 justify-start font-bold text-[#00FF66] text-2xl">
       <a href="/">NETIZEN</a>
-    </div>
+    </div> 
 
-    <div id="nav-links" class="flex items-center justify-center gap-6 flex-1 font-semibold text-gray-300">
-      <!--Enlaces de navegación-->
-      <a href="#Historia">Historia</a>
-      <a href="#Funcionamiento">Funcionamiento</a>
-      <a href="#Cultura">Cultura</a>
-
-      <!--Botón Reproductor-->
+    <!-- Nav links container (flex-1 and justify-center to guarantee true center alignment) -->
+    <div id="nav-links" class="flex flex-1 items-center justify-center gap-6 font-semibold text-gray-300">
+      <a href="#Historia">Historia</a> 
+      <a href="#Funcionamiento">Funcionamiento</a> 
+      <a href="#Cultura">Cultura</a> 
       <button id="music-button">
-        <Icon icon="mdi-light:music" width={32}/>
+        <Icon icon="boxicons:music" width="24" height="24" />
       </button>
     </div>
 
-    <div id="store-links" class="flex justify-end items-center gap-4 flex-1 font-semibold text-gray-300">
-      <a href="/Tienda">Tienda</a>
-
+    <!-- Store links container (flex-1 to match the logo and balance the grid) -->
+    <div id="store-links" class="flex flex-1 justify-end items-center gap-4 font-semibold text-gray-300">
+      <a href="/Tienda">Tienda</a> 
       <button id="cart-button">
-        <Icon icon="mdi-light:cart" width={32}/>
+        <Icon icon="boxicons:shopping-bag-alt" width="24" height="24" />
       </button>
     </div>
-
   </div>
-
 </header>
 
 {@render children()}
