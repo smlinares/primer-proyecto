@@ -9,6 +9,11 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+  <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </svelte:head>
 
 <header>
@@ -30,7 +35,7 @@
 
     <!-- Store links container (flex-1 to match the logo and balance the grid) -->
     <div id="store-links" class="flex flex-1 justify-end items-center gap-4 font-semibold text-gray-300">
-      <a href="/Tienda">Tienda</a> 
+      <a href="/tienda">Tienda</a>
       <button id="cart-button">
         <Icon icon="boxicons:shopping-bag-alt" width="24" height="24" />
       </button>
