@@ -25,9 +25,9 @@
 
     <!-- Nav links container (flex-1 and justify-center to guarantee true center alignment) -->
     <div id="nav-links" class="flex flex-1 items-center justify-center gap-6 font-semibold text-gray-300">
-      <a href="#Historia">Historia</a> 
-      <a href="#Funcionamiento">Funcionamiento</a> 
-      <a href="#Cultura">Cultura</a> 
+      <a href="/#Historia">Historia</a> 
+      <a href="/#Funcionamiento">Funcionamiento</a> 
+      <a href="/#Cultura">Cultura</a> 
       <button id="music-button">
         <Icon icon="boxicons:music" width="24" height="24" />
       </button>
