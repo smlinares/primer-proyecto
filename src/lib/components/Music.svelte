@@ -1,23 +1,32 @@
-
 <script>
+    import { statusChange } from "#lib/state/Music.svelte.js";
+    const currentTrackId = 0
+
     const { track, index } = $props()
-    const currentTrackId = ''
+    
+    
+   
+    export const handlerClick = () => {
+        statusChange(track)
+    }
+    
 
 </script>
+
 <button
     // onclick={() => selectTrack(track.id)}
     class="w-full flex items-center justify-between p-3 rounded-xl border text-left transition-all cursor-pointer {currentTrackId ===
     track.id
         ? 'bg-[#121c2e] border-cyan-400/80 text-white shadow-md'
         : 'bg-[#121826]/70 border-slate-800/80 hover:border-slate-700 hover:bg-[#121826]'}"
->
+onclick={handlerClick}>
     <div class="flex items-center gap-3.5">
         <span
             class="font-mono text-xs font-bold {currentTrackId === track.id
                 ? 'text-cyan-400'
                 : 'text-slate-500'}"
         >
-            0{index}
+            {index}
         </span>
         <div>
             <div
