@@ -28,9 +28,10 @@
       <a href="/#Historia">Historia</a> 
       <a href="/#Funcionamiento">Funcionamiento</a> 
       <a href="/#Cultura">Cultura</a> 
-      <button id="music-button">
+      <!-- svelte-ignore element_implicitly_closed -->
+      <a href="/musica" id="music-button" class="flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
         <Icon icon="boxicons:music" width="24" height="24" />
-      </button>
+      </a>
     </div>
 
     <!-- Store links container (flex-1 to match the logo and balance the grid) -->
@@ -45,7 +46,7 @@
 
 {@render children()}
 
-<footer class="flex justify-between items-center p-4 bg-[#160D26] text-gray-300">
+<footer class="flex justify-between items-center p-4 bg-[#160D26] text-gray-300 text-base">
     <div id="left-side" class="flex justify-start">
       <p>© Netizen EST. 1998, hecho por @smlinares</p>
     </div>

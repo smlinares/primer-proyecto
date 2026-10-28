@@ -1,6 +1,9 @@
 <script lang="ts">
     import Icon from "@iconify/svelte";
     import HistorySection from "../lib/components/HistorySection.svelte";
+    import FuncionamientoSection from "../lib/components/FuncionamientoSection.svelte";
+    import CulturaSection from "../lib/components/CulturaSection.svelte";
+    import MusicPlayerSection from "../lib/components/MusicPlayerSection.svelte";
 </script>
 
 <div class="flex flex-col bg-[#070A12] text-white">
@@ -47,5 +50,15 @@
     <!-- History Section Container -->
     <div id="Historia">
         <HistorySection />
+    </div>
+
+    <!-- Funcionamiento Section Container -->
+    <div id="Funcionamiento">
+        <FuncionamientoSection />
+    </div>
+
+    <!-- Cultura Section Container -->
+    <div id="Cultura">
+        <CulturaSection />
     </div>
 </div>
