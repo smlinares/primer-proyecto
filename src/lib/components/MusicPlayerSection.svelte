@@ -1,5 +1,9 @@
 <script lang="ts">
     import Icon from "@iconify/svelte";
+	import axios from "axios";
+    import Music from "./Music.svelte";
+
+	const resSong = axios.get("https://leonardoapi.vercel.app/api/tracks")
 
     const playlist = [
         { id: 1, title: "Unauthorized Design", artist: "Hello Meteor", album: "Winter Office Hours · Lofi Tape", duration: "04:12", year: "1998 / 2018", image: "/retro-setup.jpg" },
@@ -90,25 +94,18 @@
                 </div>
 
                 <div class="space-y-2 max-h-[380px] overflow-y-auto pr-1">
-                    {#each playlist as track}
-                        <button
-                            onclick={() => selectTrack(track.id)}
-                            class="w-full flex items-center justify-between p-3 rounded-xl border text-left transition-all cursor-pointer {currentTrackId === track.id
-                                ? 'bg-[#121c2e] border-cyan-400/80 text-white shadow-md'
-                                : 'bg-[#121826]/70 border-slate-800/80 hover:border-slate-700 hover:bg-[#121826]'}"
-                        >
-                            <div class="flex items-center gap-3.5">
-                                <span class="font-mono text-xs font-bold {currentTrackId === track.id ? 'text-cyan-400' : 'text-slate-500'}">
-                                    0{track.id}
-                                </span>
-                                <div>
-                                    <div class="font-semibold text-sm {currentTrackId === track.id ? 'text-cyan-200' : 'text-slate-200'}">{track.title}</div>
-                                    <div class="text-[11px] text-slate-400 font-light">{track.artist} · {track.album.split('·')[0]}</div>
-                                </div>
-                            </div>
-                            <span class="font-mono text-xs text-slate-400">{track.duration}</span>
-                        </button>
-                    {/each}
+
+					{#await resSong}
+						Cargando...
+					{:then resList} 
+						Cargado
+						<!-- svelte-ignore block_empty -->
+						{#each resList.data.tracks as track, index}
+							<Music {track} {index} />
+
+						{/each}
+					{/await}
+
                 </div>
             </div>
         </div>
