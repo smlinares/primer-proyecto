@@ -1,5 +1,3 @@
-export const actions = {
-    handlerSubmit: () => {
-        //
-    }
+export const load = () => {
+    
 }

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Icon from "@iconify/svelte";
 
-	// Pop Exhibits Data (Cultura Pop & Fotos) - 6 Temas Completos
 	const popExhibits = [
 		{
 			id: "y2k",
@@ -14,9 +13,6 @@
 			badgeColor: "border-amber-500/40 text-amber-300 bg-amber-950/40",
 			accentColor: "text-amber-400",
 			image: "/y2k_panic_pc.jpg",
-			imageAlt: "Escritorio de 1999 con monitor Sony Trinitron mostrando la cuenta regresiva del Milenio a las 23:59",
-			soundbite: "«¡Faltan diez segundos para la medianoche! ¿Se apagarán los reactores nucleares y los cajeros automáticos?»",
-			soundbiteContext: "Transmisión especial de noticias de fin de año en vivo, 31 de Diciembre de 1999",
 			summary: "A finales de los 90, la humanidad descubrió con espanto que la economía mundial dependía de sistemas informáticos construidos con fechas de dos dígitos (\"99\" en vez de \"1999\") para ahorrar preciados bytes en las memorias de cinta de los años 60 y 70. Lo que siguió fue una mezcla inolvidable de compras de pánico, búnkers suburbanos y la mayor auditoría preventiva de código de la historia humana.",
 			historicalNarrative: [
 				"Durante las décadas pioneras de la computación comercial, cuando 1 kilobyte de memoria magnética costaba cientos de dólares, programadores de mainframe truncaron los años a dos cifras (ej. \"74\" para 1974). Nadie anticipó que ese software de nóminas, banca y control logístico seguiría en producción al filo del año 2000, momento en que los relojes interpretarían \"00\" como el año 1900.",
@@ -46,9 +42,6 @@
 			badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-950/40",
 			accentColor: "text-cyan-400",
 			image: "/lan_party_era.jpg",
-			imageAlt: "Jóvenes en cybercafé de finales de los 90 jugando Counter-Strike en monitores CRT con cables de red",
-			soundbite: "«¡Bomb has been planted en punto B! ¡Cubran túnel oscuro con la AWP!»",
-			soundbiteContext: "Grito de batalla espontáneo a las 3:15 AM en un local colmado de calor y pantallas de fósforo",
 			summary: "Antes de que la fibra óptica llegara a los hogares, conectarse a internet era costoso y solitario. Los cibercafés y las fiestas LAN se convirtieron en plazas públicas donde miles de jóvenes cargaban torres de acero y monitores CRT de 25 kilos en el maletero para tirar cables Ethernet cruzados, compartir archivos y competir toda la noche.",
 			historicalNarrative: [
 				"En la era del módem telefónico dial-up —con cobro por minuto medido y latencias intolerables de 300 milisegundos— jugar videojuegos de disparos o estrategia en tiempo real desde casa era frustrante. Los locales de cybercafé y las reuniones LAN ofrecían una revelación: conexión Ethernet local a 100 Mbps con latencias casi instantáneas de 5 milisegundos.",
@@ -78,9 +71,6 @@
 			badgeColor: "border-emerald-500/40 text-emerald-300 bg-emerald-950/40",
 			accentColor: "text-emerald-400",
 			image: "/msn_chat_era.jpg",
-			imageAlt: "Escritorio con monitor Dell CRT ejecutando Windows XP, Nokia 3310, posters y lámpara de lava",
-			soundbite: "«*¡Tu contacto te ha enviado un Zumbido!* (La ventana del chat y la pantalla tiemblan con estruendo)»",
-			soundbiteContext: "Sonido grabado indeleblemente en la memoria auditiva de toda una generación",
 			summary: "Llegar de la escuela o el trabajo, encender la PC familiar y escuchar el dulce \"tururú\" de inicio de sesión de MSN Messenger fue el gran ritual social entre 1999 y 2006. Allí nació una compleja semiótica de emoticones animados, estados de ánimo poéticos y zumbidos desesperados que definió la primera identidad digital masiva.",
 			historicalNarrative: [
 				"MSN Messenger inauguró el concepto de \"presencia digital ambiental\". Por primera vez en la historia, no era necesario enviar un correo formal ni llamar por teléfono: sabías exactamente quién estaba disponible, quién estaba ocupado o quién fingía estar ausente simplemente mirando la lista de contactos.",
@@ -110,9 +100,6 @@
 			badgeColor: "border-purple-500/40 text-purple-300 bg-purple-950/40",
 			accentColor: "text-purple-400",
 			image: "/winamp_burning_mp3.jpg",
-			imageAlt: "CD-R Memorex de 700MB rotulado con Sharpie \"Rock & MP3 Mix 2000\" junto a Discman Panasonic",
-			soundbite: "«Winamp, it really whips the llama's ass!»",
-			soundbiteContext: "Saludo de bienvenida con voz distorsionada de Nullsoft al instalar el programa (1998)",
 			summary: "Antes de Spotify y del streaming infinito por suscripción, la música digital era un tesoro conquistado archivo por archivo. Winamp gobernaba las pantallas con sus ecualizadores neón y skins personalizables, mientras el software de grabación permitía crear el artefacto físico definitivo de la época: el CD-R grabado a mano con marcador indeleble.",
 			historicalNarrative: [
 				"La creación del algoritmo de compresión MPEG-1 Audio Layer III por el Instituto Fraunhofer redujo el tamaño de las pistas de audio de 50 megabytes a escasos 3 o 4 megabytes manteniendo una fidelidad acústica admirable. Para una generación habituada a los casetes de cinta magnética, esto representó una revolución tecnológica descomunal.",
@@ -142,9 +129,6 @@
 			badgeColor: "border-rose-500/40 text-rose-300 bg-rose-950/40",
 			accentColor: "text-rose-400",
 			image: "/dialup_geocities_era.jpg",
-			imageAlt: "Módem US Robotics Sportster 56k con luces rojas, estuches metálicos de AOL y mouse trackball",
-			soundbite: "«¡Cuelga el teléfono de la cocina, que estoy descargando un driver desde hace tres horas!»",
-			soundbiteContext: "El reclamo universal en los hogares de todo el mundo cuando entraba una llamada fija",
 			summary: "Conectarse a internet en los 90 era un evento físico ruidoso e inconfundible. El módem entonaba su sonata de tonos analógicos y estática sobre el par de cobre, mientras America Online ejecutaba la campaña de marketing directo más agresiva de la historia enviando latas y CDs gratis a prácticamente cada hogar del planeta.",
 			historicalNarrative: [
 				"El ritual de conexión de un módem dial-up de 33.6k o 56k —los tonos de marcado DTMF, el timbre de llamada lejana, el chillido agudo de respuesta y la tormenta de estática blanca del \"handshake\"— era la comprobación auditiva de que dos computadoras negociaban los límites físicos del ancho de banda sobre cables telefónicos pensados para la voz humana.",
@@ -174,9 +158,6 @@
 			badgeColor: "border-indigo-500/40 text-indigo-300 bg-indigo-950/40",
 			accentColor: "text-indigo-400",
 			image: "/retro-setup.jpg",
-			imageAlt: "Pantalla con terminal retro de chat y estética de diseño web artesanal de los 90",
-			soundbite: "«¡Sitio optimizado para resolución de 800x600 píxeles y Netscape Navigator 3.0 Gold!»",
-			soundbiteContext: "Insignia obligatoria al pie de página junto al contador de visitas analógico",
 			summary: "Antes de los feeds homogeneizados y las redes sociales algorítmicas, internet era un vasto archipiélago de páginas artesanales. GeoCities organizó el ciberespacio en barrios temáticos donde millones de usuarios comunes aprendieron HTML autodidacta para levantar santuarios personales sin perseguir métricas corporativas.",
 			historicalNarrative: [
 				"Fundado en 1994 por David Bohnett y John Rezner, GeoCities democratizó el hospedaje web ofreciendo entre 1 y 2 megabytes de espacio gratuito estructurado como vecindarios temáticos: \"SiliconValley\" para informática, \"Area51\" para ciencia ficción y conspiraciones, \"Soho\" para artes visuales, \"Colosseum\" para deportes y \"Heartland\" para familias.",
@@ -374,7 +355,6 @@
 					<div class="sticky top-6 space-y-2">
 						<div class="flex items-center justify-between px-1 mb-2">
 							<span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">TEMAS POPULARES</span>
-							<span class="text-[11px] font-mono text-slate-400">1993 – 2004</span>
 						</div>
 						<div class="space-y-2">
 							{#each popExhibits as ex}
@@ -419,20 +399,7 @@
 							</button>
 							<div class="flex items-center justify-between text-[11px] font-mono text-slate-400 px-1 pt-2">
 								<span class="text-slate-300 font-light truncate max-w-[80%]">{currentPop.imageAlt}</span>
-								<button 
-									type="button"
-									onclick={() => openZoom(currentPop.image, currentPop.imageAlt, currentPop.title)}
-									class="inline-flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer shrink-0 ml-2 bg-transparent border-0 p-0 text-xs font-mono"
-								>
-									<span>Ampliar foto</span>
-								</button>
 							</div>
-						</div>
-
-						<!-- Soundbite Quote -->
-						<div class="border-l-2 border-cyan-400 pl-3.5 py-1">
-							<p class="text-xs sm:text-sm text-slate-200 italic font-mono leading-relaxed">{currentPop.soundbite}</p>
-							<span class="text-[11px] text-slate-400 mt-0.5 block">— {currentPop.soundbiteContext}</span>
 						</div>
 
 						<!-- Narrative Paragraphs -->

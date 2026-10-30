@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import { products } from "#lib/products.ts";
     import ProductCard from "../../lib/components/ProductCard.svelte";
 </script>
