@@ -22,7 +22,7 @@
     <!-- Clickable Product Link (Image & Details) -->
     <a href={"/tienda/" + id} class="flex flex-col flex-1 group cursor-pointer">
         <!-- Image Container -->
-        <div id="cardImage" class="w-full h-60 flex-shrink-0 overflow-hidden bg-gray-900">
+        <div id="cardImage" class="w-full h-60 shrink-0 overflow-hidden bg-gray-900">
             <img src={image} alt={productName} class="block w-full h-full object-cover transition duration-300 group-hover:scale-105"/>
         </div>
     

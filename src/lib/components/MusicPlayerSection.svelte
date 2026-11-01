@@ -194,7 +194,7 @@
                 </div>
 
                 <!-- Vinyl Record Artwork -->
-                <div class="my-8 relative w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-slate-950 border-4 border-slate-800/80 shadow-2xl flex items-center justify-center {isPlaying ? '[animation:spin_8s_linear_infinite]' : ''}">
+                <div class="my-8 relative w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-slate-950 border-4 border-slate-800/80 shadow-2xl flex items-center justify-center {isPlaying ? 'animate-[spin_8s_linear_infinite]' : ''}">
                     <div class="absolute inset-2 rounded-full border border-slate-800/60"></div>
                     <div class="absolute inset-8 rounded-full border border-slate-800/40"></div>
                     <div class="absolute inset-20 rounded-full border border-slate-800/20"></div>
@@ -229,7 +229,7 @@
                     {/await}
                 </div>
 
-                <div class="space-y-2 max-h-[380px] overflow-y-auto pr-1">
+                <div class="space-y-2 max-h-95 overflow-y-auto pr-1">
                     {#await playlistPromise}
                         <div class="py-12 text-center">
                             <p class="text-cyan-400 font-mono animate-pulse text-sm">Cargando Lista de Canciones...</p>

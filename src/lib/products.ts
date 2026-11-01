@@ -20,7 +20,7 @@ export const products = [
             image: "/merch/Endless Summer; Cassette.png",
             productName: "Endless Summer",
             maker: "The Midnight",
-            price: "$30",
+            price: "$36",
             description: "Combina la electrónica retrofuturista de los 80s, saxofones y temas urbanos agridulces"
         },
         {
@@ -31,4 +31,20 @@ export const products = [
             price: "$30",
             description: "Fusiona sintetizadores con influencias de deep house, pop y rock, dando un aire de los 90s"
         },
+        {
+            id: 5, // Example ID, adjust as needed
+            productName: "Heroes",
+            maker: "The Midnight",
+            price: "$75.00", // Adjust price as needed
+            description: "Translucent Blue Double 140g Vinyl featuring tracks like 'Change Your Heart or Die' and 'Heartbeat'.",
+            image: "/merch/Heroes; Vinyl.png" // Adjust path to your image asset
+        },
+        {
+            id: 6, // Example ID, adjust as needed
+            productName: "Red, White and Bruised: The Midnight Live",
+            maker: "The Midnight",
+            price: "$60.00", // Adjust price as needed
+            description: "Limited Edition Red Coloured Vinyl recorded live, featuring iconic live performance snapshots on the cover sleeve.",
+            image: "/merch/Red, White and Bruised; Vinyl.png" // Adjust path to your image asset
+        }
     ];
