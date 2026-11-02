@@ -3,6 +3,7 @@
     import HistorySection from "../lib/components/HistorySection.svelte";
     import FuncionamientoSection from "../lib/components/FuncionamientoSection.svelte";
     import CulturaSection from "../lib/components/CulturaSection.svelte";
+    import { cart } from "#lib/cartStore.ts";
     import MusicPlayerSection from "../lib/components/MusicPlayerSection.svelte";
 </script>
 

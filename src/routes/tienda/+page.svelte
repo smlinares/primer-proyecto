@@ -3,6 +3,7 @@
 
     import { products } from "#lib/products.ts";
     import ProductCard from "../../lib/components/ProductCard.svelte";
+    import { cart } from "#lib/cartStore.ts";
 </script>
 
 <div id="tienda-section" class="bg-[#070A12] p-8">

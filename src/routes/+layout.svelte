@@ -4,11 +4,15 @@
   import type { LayoutProps } from './$types';
   import Icon from "@iconify/svelte";
   import ShoppingBag from "#lib/components/CartModal.svelte";
+  import { cart } from "#lib/cartStore.ts";
 
   let { children }: LayoutProps = $props();
 
   // State to manage shopping bag modal visibility
   let isCartOpen = $state(false);
+
+  // Calculate total items for the badge count
+  let totalItems = $derived($cart.reduce((acc, item) => acc + item.quantity, 0));
 </script>
 
 <svelte:head>
@@ -44,9 +48,14 @@
       <button 
         id="cart-button" 
         onclick={() => isCartOpen = true}
-        class="flex items-center text-gray-300 hover:text-white transition-colors cursor-pointer"
+        class="relative flex items-center text-gray-300 hover:text-white transition-colors cursor-pointer"
       >
         <Icon icon="boxicons:shopping-bag-alt" width="24" height="24" />
+        {#if totalItems > 0}
+          <span class="absolute -top-1 -right-1 bg-cyan-400 text-slate-950 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+            {totalItems}
+          </span>
+        {/if}
       </button>
     </div>
   </div>
