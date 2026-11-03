@@ -31,7 +31,8 @@
 	}
 </script>
 
-<div class="min-h-screen bg-[#070A12] px-8 py-12 text-white font-sans">
+<section class="py-6 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto">
+	<div class="min-h-screen bg-[#070A12] px-8 py-12 text-white font-sans">
 	<div class="mx-auto flex max-w-7xl flex-col gap-8">
 		<!-- Header Section -->
 		<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2 pb-6 border-b border-slate-800">
@@ -314,3 +315,4 @@
 		</div>
 	</div>
 {/if}
+</section>

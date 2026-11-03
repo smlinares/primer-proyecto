@@ -5,20 +5,20 @@
     import CulturaSection from "../lib/components/CulturaSection.svelte";
 </script>
 
-<div class="flex flex-col w-full bg-[#070A12] text-white">
+<div class="flex flex-col w-full bg-[#070A12] text-white overflow-x-hidden">
     <!-- Hero Section -->
     <section 
         id="hero-body" 
-        class="relative w-full flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 py-16 sm:py-24"
+        class="relative w-full flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 py-10 sm:py-16 md:py-24"
     >
-        <div class="mx-auto flex max-w-7xl flex-col lg:flex-row items-center justify-between gap-12 w-full">
+        <div class="mx-auto flex max-w-7xl flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
             <!-- Left Content Column -->
-            <div class="flex max-w-xl flex-col items-center lg:items-start text-center lg:text-left gap-6">
+            <div class="flex max-w-xl flex-col items-center lg:items-start text-center lg:text-left gap-4 sm:gap-6">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-                    Un recorrido por la historia de la <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Web</span>
+                    Un recorrido por la historia de la <span class="bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Web</span>
                 </h1>
                 
-                <p class="text-sm sm:text-base text-slate-400 leading-relaxed max-w-lg">
+                <p class="text-xs sm:text-base text-slate-400 leading-relaxed max-w-lg">
                     Desde el primer servidor en el CERN y la guerra de los navegadores, hasta los protocolos descentralizados y la evolución cultural que transformó la sociedad moderna.
                 </p>
             </div>
@@ -36,16 +36,16 @@
         </div>
     </section>
 
-    <!-- Sections -->
-    <div id="Historia" class="w-full">
+    <!-- Sections with Compact Mobile Spacing -->
+    <div id="Historia" class="w-full py-6 sm:py-12 border-t border-slate-900">
         <HistorySection />
     </div>
 
-    <div id="Funcionamiento" class="w-full">
+    <div id="Funcionamiento" class="w-full py-6 sm:py-12 border-t border-slate-900">
         <FuncionamientoSection />
     </div>
 
-    <div id="Cultura" class="w-full">
+    <div id="Cultura" class="w-full py-6 sm:py-12 border-t border-slate-900">
         <CulturaSection />
     </div>
 </div>
