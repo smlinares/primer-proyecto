@@ -67,9 +67,8 @@
 										? 'bg-[#121c2e] border-cyan-400 text-white shadow-md shadow-cyan-950/30'
 										: 'bg-[#121826]/70 border-slate-800/80 hover:border-slate-700 hover:bg-[#121826]'}"
 								>
-									<div class="flex items-center justify-between mb-0.5 font-mono text-[11px]">
+									<div class="mb-0.5 font-mono text-[11px]">
 										<span class={selectedPopId === ex.id ? 'text-cyan-400 font-bold' : 'text-slate-400'}>{ex.era}</span>
-										<span class="text-[9px] px-1.5 py-0.2 rounded {selectedPopId === ex.id ? 'bg-cyan-950 text-cyan-300' : 'text-slate-500'}">FOTO</span>
 									</div>
 									<h4 class="font-bold text-sm mb-0.5 {selectedPopId === ex.id ? 'text-white' : 'text-slate-200'}">{ex.shortName}</h4>
 									<p class="text-[11px] text-slate-400 line-clamp-1 font-light">{ex.tagline}</p>
