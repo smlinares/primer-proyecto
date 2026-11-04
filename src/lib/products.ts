@@ -36,7 +36,7 @@ export const products = [
             productName: "Heroes",
             maker: "The Midnight",
             price: "$75.00", // Adjust price as needed
-            description: "Translucent Blue Double 140g Vinyl featuring tracks like 'Change Your Heart or Die' and 'Heartbeat'.",
+            description: "Vinilo doble azul translúcido de 140 g con canciones como «Change Your Heart or Die» y «Heartbeat».",
             image: "/merch/Heroes; Vinyl.png" // Adjust path to your image asset
         },
         {
@@ -44,7 +44,7 @@ export const products = [
             productName: "Red, White and Bruised: The Midnight Live",
             maker: "The Midnight",
             price: "$60.00", // Adjust price as needed
-            description: "Limited Edition Red Coloured Vinyl recorded live, featuring iconic live performance snapshots on the cover sleeve.",
+            description: "Vinilo rojo de edición limitada, grabado en vivo y con imágenes icónicas de presentaciones en directo en la portada.",
             image: "/merch/Red, White and Bruised; Vinyl.png" // Adjust path to your image asset
         }
     ];
