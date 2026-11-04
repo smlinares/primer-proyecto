@@ -11,12 +11,12 @@
     <!-- Hero Section -->
     <section 
         id="hero-body" 
-        class="relative flex min-h-[calc(100vh-64px)] w-full items-center justify-between px-8 md:px-16 lg:px-24 py-12"
+        class="relative flex min-h-[calc(100svh-8rem)] w-full flex-col items-center justify-center gap-10 px-4 py-10 sm:px-8 lg:min-h-[calc(100vh-64px)] lg:flex-row lg:justify-between lg:gap-12 lg:px-24 lg:py-12"
     >
-        <div class="mx-auto flex max-w-7xl items-center justify-between gap-12 w-full">
+        <div class="mx-auto flex w-full max-w-7xl flex-col items-center gap-8 lg:flex-row lg:justify-between lg:gap-12">
             <!-- Left Content Column -->
-            <div id="hero-content" class="flex max-w-xl flex-col gap-6">
-                <h1 id="welcome-text" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+            <div id="hero-content" class="flex w-full max-w-xl flex-col gap-5 sm:gap-6">
+                <h1 id="welcome-text" class="text-3xl font-extrabold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-6xl">
                     Un recorrido por la historia de la <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Web</span>
                 </h1>
                 
@@ -26,7 +26,7 @@
             </div>
 
             <!-- Right Image Column -->
-            <div id="hero-image" class="w-full max-w-lg shrink-0">
+            <div id="hero-image" class="w-full max-w-lg lg:shrink-0">
                 <div class="overflow-hidden rounded-2xl border border-slate-800/80 bg-[#0F1420] shadow-2xl shadow-cyan-950/20">
                     <img 
                         id="welcome-image" 

@@ -268,7 +268,7 @@
 	];
 </script>
 
-<div class="min-h-screen bg-[#070A12] px-8 py-12 text-white font-sans">
+<div class="min-h-screen bg-[#070A12] px-4 py-8 font-sans text-white sm:px-8 sm:py-12">
 	<div class="mx-auto flex max-w-7xl flex-col gap-8">
 		<!-- Header Section -->
 		<div class="flex flex-col gap-3">
@@ -279,7 +279,7 @@
 					02 / ARQUITECTURA & PROTOCOLOS
 				</span>
 			</div>
-			<h2 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+			<h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
 				Funcionamiento de la Red
 			</h2>
 			<p class="text-sm sm:text-base text-slate-400 max-w-3xl">
@@ -287,15 +287,15 @@
 			</p>
 		</div>
 
-		<div class="flex gap-8">
+		<div class="flex min-w-0 flex-col gap-6 lg:flex-row lg:gap-8">
 			<!-- Sidebar / Module Filter Buttons -->
-			<aside class="flex w-80 shrink-0 flex-col gap-4">
+			<aside class="flex w-full min-w-0 flex-col gap-4 lg:w-80 lg:shrink-0">
 				<div class="flex items-center justify-between text-xs font-mono tracking-wider text-cyan-400 uppercase">
 					<span>Módulos Técnicos</span>
 					<span class="text-slate-500">3 Módulos</span>
 				</div>
 
-				<div class="flex flex-col gap-3">
+				<div class="grid grid-cols-2 gap-3 lg:flex lg:flex-col">
 					{#each Object.values(modulesData) as mod}
 						<button
 							onclick={() => (activeTab = mod.id as keyof typeof modulesData)}
@@ -323,10 +323,10 @@
 			</aside>
 
 			<!-- Main Content Panel -->
-			<main class="flex flex-1 flex-col gap-6 rounded-2xl border border-slate-800/80 bg-[#0B0F19] p-8 shadow-2xl">
+			<main class="flex min-w-0 flex-1 flex-col gap-6 rounded-2xl border border-slate-800/80 bg-[#0B0F19] p-4 shadow-2xl sm:p-6 lg:p-8">
 				<!-- Paradigm Header -->
 				<div class="flex flex-col gap-3">
-					<div class="flex items-center justify-between">
+					<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
 						<span class="font-mono text-xs font-semibold tracking-wider text-cyan-400 uppercase">
 							{current.paradigmTag}
 						</span>
@@ -334,7 +334,7 @@
 							{current.authors}
 						</span>
 					</div>
-					<h3 class="text-3xl font-extrabold tracking-tight text-white">
+					<h3 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
 						{current.mainTitle}
 					</h3>
 					<p class="text-sm text-slate-300 leading-relaxed">
@@ -344,7 +344,7 @@
 
 				{#if activeTab === 'tcpip'}
 					<!-- 1. Conmutación de Circuitos vs Conmutación de Paquetes -->
-					<div class="grid grid-cols-2 gap-6 pt-2">
+					<div class="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-2 sm:gap-6">
 						<div class="flex flex-col gap-4 rounded-xl border border-red-900/30 bg-[#160B13]/60 p-6">
 							<div class="flex items-center justify-between">
 								<span class="font-bold text-rose-400 text-sm">Modelo Telefónico (Circuitos)</span>
@@ -582,7 +582,7 @@
 
 				{:else if activeTab === 'dns'}
 					<!-- 4 Summary Cards Grid matching DNS -->
-					<div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+					<div class="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-2 md:grid-cols-4">
 						<div class="flex flex-col gap-1.5 rounded-xl border border-slate-800/80 bg-[#121826]/70 p-4">
 							<span class="font-bold text-cyan-400 text-sm">Caché Local</span>
 							<span class="font-mono text-[11px] text-slate-400">Navegador & SO</span>

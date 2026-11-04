@@ -219,8 +219,8 @@
     let progressPercentage = $derived(duration > 0 ? (currentTime / duration) * 100 : 0);
 </script>
 
-<div class="min-h-screen bg-[#070A12] px-8 py-12 text-white font-sans">
-    <div class="mx-auto flex max-w-7xl flex-col gap-8">
+<div class="min-h-screen bg-[#070A12] px-4 py-8 font-sans text-white sm:px-8 sm:py-12">
+    <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:gap-8">
         <!-- Hidden YouTube Player Container -->
         <div id="youtube-player" class="hidden"></div>
 
@@ -237,9 +237,9 @@
         </div>
 
         <!-- Main Player Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
             <!-- Left Column: Vinyl & Current Track Details -->
-            <div class="lg:col-span-5 lg:min-h-[475px] rounded-2xl border border-slate-800 bg-[#0B0F19] p-6 shadow-xl flex flex-col items-center text-center relative overflow-hidden">
+            <div class="relative flex flex-col items-center overflow-hidden rounded-2xl border border-slate-800 bg-[#0B0F19] p-4 text-center shadow-xl sm:p-6 lg:col-span-5 lg:min-h-[475px]">
                 <!-- Centered Status Badge -->
                 <div class="absolute top-4 left-1/2 -translate-x-1/2">
                     <span class="px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wider border {isTrackLoading ? 'border-amber-500/40 text-amber-300 bg-amber-950/40 animate-pulse' : isPlaying ? 'border-emerald-500/40 text-emerald-300 bg-emerald-950/40' : 'border-rose-500/40 text-rose-300 bg-rose-950/40'}">
@@ -276,7 +276,7 @@
             </div>
 
             <!-- Right Column: Playlist wrapped in {#await} -->
-            <div class="lg:col-span-7 rounded-2xl border border-slate-800 bg-[#0B0F19] p-6 shadow-xl space-y-4">
+            <div class="space-y-4 rounded-2xl border border-slate-800 bg-[#0B0F19] p-4 shadow-xl sm:p-6 lg:col-span-7">
                 <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
                     <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-wider">
                         <Icon icon="boxicons:music" width="16" />
@@ -378,7 +378,7 @@
                 </div>
 
                 <!-- Right Volume Control -->
-                <div class="hidden sm:flex items-center gap-2 w-32 justify-self-end">
+                <div class="flex w-full items-center justify-center gap-2 sm:w-32 sm:justify-self-end">
                     <Icon icon="lucide:volume-2" class="text-slate-400 shrink-0" width="18" />
                     <input 
                         type="range" 

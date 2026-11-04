@@ -50,7 +50,7 @@
     let current = $derived(activeTab !== 'matrix' ? historyData[activeTab] : null);
 </script>
 
-<div class="min-h-screen bg-[#070A12] px-8 py-12 text-white font-sans">
+<div class="min-h-screen bg-[#070A12] px-4 py-8 font-sans text-white sm:px-8 sm:py-12">
     <div class="mx-auto flex max-w-7xl flex-col gap-8">
         
         <!-- Header Section -->
@@ -60,37 +60,37 @@
                     01 / CRONOLOGÍA & GENERACIONES
                 </span>
             </div>
-            <h2 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+            <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
                 Historia
             </h2>
         </div>
 
-        <div class="flex gap-8">
+        <div class="flex min-w-0 flex-col gap-6 lg:flex-row lg:gap-8">
             <!-- Sidebar / Filter Buttons -->
-            <aside class="flex w-80 shrink-0 flex-col gap-4">
+            <aside class="flex w-full min-w-0 flex-col gap-4 lg:w-80 lg:shrink-0">
                 <div class="flex items-center justify-between text-xs font-mono tracking-wider text-cyan-400 uppercase">
                     <span>Filtrar por generación</span>
                     <span class="text-slate-500">4 vistas</span>
                 </div>
 
-                <div class="flex flex-col gap-3">
+                <div class="grid grid-cols-2 gap-3 lg:flex lg:flex-col">
                     <!-- Web 1.0 Button -->
                     <button 
                         onclick={() => activeTab = 'web1'}
                         class="group flex flex-col gap-2 rounded-xl border p-4 text-left transition-all cursor-pointer {activeTab === 'web1' ? 'border-cyan-400 bg-[#0F1420] shadow-lg shadow-cyan-950/20' : 'border-slate-800/80 bg-[#0B0F19]/60 hover:border-slate-700 hover:bg-[#0F1420]'}"
                     >
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
                             <span class="rounded bg-cyan-950/90 px-2 py-0.5 font-mono text-[10px] font-semibold text-cyan-400 border border-cyan-800/40">Read-Only</span>
-                            <span class="font-mono text-xs text-slate-400">1991 - 2004</span>
+                            <span class="text-right font-mono text-[10px] text-slate-400 sm:text-xs">1991 - 2004</span>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
+                        <div class="flex min-w-0 items-center justify-between gap-1">
+                            <div class="flex min-w-0 items-center gap-2">
                                 <Icon icon="lucide:globe" class="text-cyan-400" width="18" />
-                                <span class="font-bold text-white">Web 1.0</span>
+                                <span class="min-w-0 break-words font-bold text-white">Web 1.0</span>
                             </div>
                             <Icon icon="lucide:chevron-right" class="text-slate-500 transition-transform group-hover:translate-x-0.5" width="16" />
                         </div>
-                        <p class="text-xs text-slate-400 leading-relaxed">
+                        <p class="hidden text-xs leading-relaxed text-slate-400 sm:block">
                             La web estática: documentos hipervinculados, CERN, GeoCities y directorios.
                         </p>
                     </button>
@@ -100,18 +100,18 @@
                         onclick={() => activeTab = 'web2'}
                         class="group flex flex-col gap-2 rounded-xl border p-4 text-left transition-all cursor-pointer {activeTab === 'web2' ? 'border-cyan-400 bg-[#0F1420] shadow-lg shadow-cyan-950/20' : 'border-slate-800/80 bg-[#0B0F19]/60 hover:border-slate-700 hover:bg-[#0F1420]'}"
                     >
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
                             <span class="rounded bg-indigo-950/90 px-2 py-0.5 font-mono text-[10px] font-semibold text-indigo-400 border border-indigo-800/40">Read-Write</span>
-                            <span class="font-mono text-xs text-slate-400">2004 - 2014+</span>
+                            <span class="text-right font-mono text-[10px] text-slate-400 sm:text-xs">2004 - 2014+</span>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
+                        <div class="flex min-w-0 items-center justify-between gap-1">
+                            <div class="flex min-w-0 items-center gap-2">
                                 <Icon icon="lucide:users" class="text-slate-400" width="18" />
-                                <span class="font-bold text-slate-200">Web 2.0</span>
+                                <span class="min-w-0 break-words font-bold text-slate-200">Web 2.0</span>
                             </div>
                             <Icon icon="lucide:chevron-right" class="text-slate-500 transition-transform group-hover:translate-x-0.5" width="16" />
                         </div>
-                        <p class="text-xs text-slate-400 leading-relaxed">
+                        <p class="hidden text-xs leading-relaxed text-slate-400 sm:block">
                             La web social: AJAX/SPAs, contenido de usuarios (UGC) y plataformas cloud.
                         </p>
                     </button>
@@ -121,18 +121,18 @@
                         onclick={() => activeTab = 'web3'}
                         class="group flex flex-col gap-2 rounded-xl border p-4 text-left transition-all cursor-pointer {activeTab === 'web3' ? 'border-cyan-400 bg-[#0F1420] shadow-lg shadow-cyan-950/20' : 'border-slate-800/80 bg-[#0B0F19]/60 hover:border-slate-700 hover:bg-[#0F1420]'}"
                     >
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
                             <span class="rounded bg-amber-950/90 px-2 py-0.5 font-mono text-[10px] font-semibold text-amber-400 border border-amber-800/40">Read-Write-Own</span>
-                            <span class="font-mono text-xs text-slate-400">2014 - Presente</span>
+                            <span class="text-right font-mono text-[10px] text-slate-400 sm:text-xs">2014 - Presente</span>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
+                        <div class="flex min-w-0 items-center justify-between gap-1">
+                            <div class="flex min-w-0 items-center gap-2">
                                 <Icon icon="lucide:cpu" class="text-slate-400" width="18" />
-                                <span class="font-bold text-slate-200">Web 3.0</span>
+                                <span class="min-w-0 break-words font-bold text-slate-200">Web 3.0</span>
                             </div>
                             <Icon icon="lucide:chevron-right" class="text-slate-500 transition-transform group-hover:translate-x-0.5" width="16" />
                         </div>
-                        <p class="text-xs text-slate-400 leading-relaxed">
+                        <p class="hidden text-xs leading-relaxed text-slate-400 sm:block">
                             La web descentralizada: protocolos P2P, blockchains, identidad SSI y agentes IA.
                         </p>
                     </button>
@@ -142,18 +142,18 @@
                         onclick={() => activeTab = 'matrix'}
                         class="group flex flex-col gap-2 rounded-xl border p-4 text-left transition-all cursor-pointer {activeTab === 'matrix' ? 'border-cyan-400 bg-[#0F1420] shadow-lg shadow-cyan-950/20' : 'border-slate-800/80 bg-[#0B0F19]/60 hover:border-slate-700 hover:bg-[#0F1420]'}"
                     >
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
                             <span class="rounded bg-emerald-950/90 px-2 py-0.5 font-mono text-[10px] font-semibold text-emerald-400 border border-emerald-800/40">Tabla Sintética</span>
                             <span class="font-mono text-xs text-slate-400">Comparativa</span>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
+                        <div class="flex min-w-0 items-center justify-between gap-1">
+                            <div class="flex min-w-0 items-center gap-2">
                                 <Icon icon="lucide:layout-grid" class="text-slate-400" width="18" />
-                                <span class="font-bold text-slate-200">Matriz Comparativa</span>
+                                <span class="min-w-0 break-words font-bold text-slate-200">Matriz Comparativa</span>
                             </div>
                             <Icon icon="lucide:chevron-right" class="text-slate-500 transition-transform group-hover:translate-x-0.5" width="16" />
                         </div>
-                        <p class="text-xs text-slate-400 leading-relaxed">
+                        <p class="hidden text-xs leading-relaxed text-slate-400 sm:block">
                             Contraste tabular de las 6 dimensiones fundamentales entre Web 1.0, 2.0 y 3.0.
                         </p>
                     </button>
@@ -161,11 +161,11 @@
             </aside>
 
             <!-- Main Content Area -->
-            <main class="flex flex-1 flex-col gap-6 rounded-2xl border border-slate-800/80 bg-[#0B0F19] p-8 shadow-2xl">
+            <main class="flex min-w-0 flex-1 flex-col gap-6 rounded-2xl border border-slate-800/80 bg-[#0B0F19] p-4 shadow-2xl sm:p-6 lg:p-8">
                 {#if activeTab === 'matrix'}
                     <!-- Matriz Comparativa View -->
                     <div class="flex flex-col gap-6">
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
                             <span class="font-mono text-xs font-semibold tracking-wider text-cyan-400 uppercase">
                                 MATRIZ COMPARATIVA DE GENERACIONES
                             </span>
@@ -245,7 +245,7 @@
                     </div>
 
                     <!-- Feature Cards Grid -->
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <div class="flex flex-col gap-2 rounded-xl border border-slate-800/80 bg-[#121826]/70 p-5">
                             <div class="flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase">
                                 <Icon icon="lucide:cpu" width="16" />
@@ -280,7 +280,7 @@
                     </div>
 
                     <!-- Tags Section -->
-                    <div class="grid grid-cols-2 gap-6 pt-2">
+                    <div class="grid grid-cols-1 gap-6 pt-2 sm:grid-cols-2">
                         <div class="flex flex-col gap-3">
                             <span class="font-mono text-xs tracking-wider text-slate-400 uppercase">Tecnologías Insignia</span>
                             <div class="flex flex-wrap gap-2 font-mono text-xs">

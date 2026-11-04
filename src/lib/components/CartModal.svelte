@@ -46,7 +46,7 @@
     ></div>
 
     <!-- Modal Drawer (Slide-over from right) -->
-    <div class="fixed right-0 top-0 h-full w-full max-w-md bg-[#0B0F19] border-l border-slate-800 text-white z-50 shadow-2xl flex flex-col p-6 animate-in slide-in-from-right duration-200">
+    <div class="fixed right-0 top-0 z-50 flex h-full w-full max-w-md animate-in slide-in-from-right flex-col border-l border-slate-800 bg-[#0B0F19] p-4 text-white shadow-2xl duration-200 sm:p-6">
         
         <!-- Header -->
         <div class="flex items-center justify-between pb-4 border-b border-slate-800">

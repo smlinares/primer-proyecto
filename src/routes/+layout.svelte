@@ -25,30 +25,31 @@
 </svelte:head>
 
 <header>
-  <div id="header-container" class="flex flex-1 justify-between items-center px-5 py-3 bg-[#160D26] text-white">
+  <div id="header-container" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 bg-[#160D26] px-4 py-3 text-white sm:px-5 md:flex-nowrap">
     <!-- Logo container -->
-    <div id="logo" class="flex flex-1 justify-start font-bold text-[#00FF66] text-2xl">
+    <div id="logo" class="flex-none font-bold text-xl text-[#00FF66] sm:text-2xl md:flex-1">
       <a href="/">NETIZEN</a>
     </div> 
 
     <!-- Nav links container -->
-    <div id="nav-links" class="flex flex-1 items-center justify-center gap-6 font-semibold text-gray-300">
-      <a href="/#Historia">Historia</a> 
-      <a href="/#Funcionamiento">Funcionamiento</a> 
-      <a href="/#Cultura">Cultura</a> 
+    <nav id="nav-links" class="order-3 flex w-full flex-none items-center justify-around gap-2 text-xs font-semibold text-gray-300 sm:text-sm md:order-none md:w-auto md:flex-1 md:justify-center md:gap-6 md:text-base">
+      <a href="/#Historia" class="inline-flex min-h-11 items-center justify-center">Historia</a>
+      <a href="/#Funcionamiento" class="inline-flex min-h-11 items-center justify-center">Funcionamiento</a>
+      <a href="/#Cultura" class="inline-flex min-h-11 items-center justify-center">Cultura</a>
       <!-- svelte-ignore element_implicitly_closed -->
-      <a href="/musica" id="music-button" class="flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
+      <a href="/musica" id="music-button" aria-label="Música" class="flex min-h-11 min-w-11 items-center justify-center text-cyan-400 transition-colors hover:text-cyan-300">
         <Icon icon="boxicons:music" width="24" height="24" />
       </a>
-    </div>
+    </nav>
 
     <!-- Store links container -->
-    <div id="store-links" class="flex flex-1 justify-end items-center gap-4 font-semibold text-gray-300">
+    <div id="store-links" class="flex flex-none items-center justify-end gap-3 font-semibold text-gray-300 sm:gap-4 md:flex-1">
       <a href="/tienda">Tienda</a>
       <button 
         id="cart-button" 
         onclick={() => isCartOpen = true}
-        class="relative flex items-center text-gray-300 hover:text-white transition-colors cursor-pointer"
+        aria-label="Carrito"
+        class="relative flex min-h-11 min-w-11 items-center justify-center text-gray-300 transition-colors hover:text-white"
       >
         <Icon icon="boxicons:shopping-bag-alt" width="24" height="24" />
         {#if totalItems > 0}
@@ -66,7 +67,7 @@
 <!-- Shopping Bag Modal Component -->
 <ShoppingBag isOpen={isCartOpen} onClose={() => isCartOpen = false} />
 
-<footer class="flex justify-between items-center p-4 bg-[#160D26] text-gray-300 text-base">
+<footer class="flex flex-col items-start justify-between gap-2 bg-[#160D26] p-4 text-xs text-gray-300 sm:flex-row sm:items-center sm:text-base">
     <div id="left-side" class="flex justify-start">
       <p>© Netizen EST. 1998, hecho por @smlinares</p>
     </div>

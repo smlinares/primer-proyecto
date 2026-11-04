@@ -15,8 +15,8 @@
     }
 </script>
 
-<div class="min-h-screen bg-[#070A12] px-8 py-12 text-white font-sans flex items-center justify-center">
-    <div class="relative max-w-4xl w-full bg-[#0b0f19] border border-gray-800 rounded-2xl p-8 shadow-2xl">
+<div class="flex min-h-screen items-center justify-center bg-[#070A12] px-4 py-6 font-sans text-white sm:px-8 sm:py-12">
+    <div class="relative w-full max-w-4xl rounded-2xl border border-gray-800 bg-[#0b0f19] p-4 shadow-2xl sm:p-8">
         
         <!-- Close Button in Upper Right Corner -->
         <a 
@@ -28,8 +28,8 @@
         </a>
 
         {#if producto}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-4 md:mt-0">
-                <div class="w-full h-80 sm:h-96 rounded-xl overflow-hidden bg-gray-900 border border-gray-800">
+            <div class="mt-4 grid grid-cols-1 items-center gap-6 md:mt-0 md:grid-cols-2 md:gap-8">
+                <div class="h-64 w-full overflow-hidden rounded-xl border border-gray-800 bg-gray-900 sm:h-80 md:h-96">
                     <img src={producto.image} alt={producto.productName} class="w-full h-full object-cover">
                 </div>
 

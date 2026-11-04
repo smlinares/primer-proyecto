@@ -31,7 +31,7 @@
 	}
 </script>
 
-<div class="min-h-screen bg-[#070A12] px-8 py-12 text-white font-sans">
+<div class="min-h-screen bg-[#070A12] px-4 py-8 font-sans text-white sm:px-8 sm:py-12">
 	<div class="mx-auto flex max-w-7xl flex-col gap-8">
 		<!-- Header Section -->
 		<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2 pb-6 border-b border-slate-800">
@@ -52,7 +52,7 @@
 
 		<!-- TAB 1: Cultura Pop & Fotos -->
 		{#if activeSubTab === 'pop'}
-			<section class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+			<section class="grid min-w-0 grid-cols-1 gap-6 lg:gap-8 md:grid-cols-12">
 				<!-- Left Column: Topic Selector -->
 				<div class="md:col-span-4 lg:col-span-4">
 					<div class="sticky top-6 space-y-2">
@@ -144,7 +144,7 @@
 
 		<!-- TAB 2: Pilares Técnicos -->
 		{:else if activeSubTab === 'pillars'}
-			<section class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+			<section class="grid min-w-0 grid-cols-1 gap-6 lg:gap-8 md:grid-cols-12">
 				<div class="md:col-span-4 lg:col-span-4">
 					<div class="sticky top-6 space-y-2">
 						<div class="flex items-center justify-between px-1 mb-2">
