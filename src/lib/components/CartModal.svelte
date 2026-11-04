@@ -4,7 +4,10 @@
 
     let { isOpen = false, onClose } = $props();
 
+    // State to toggle the checkout mockup view
     let isCheckingOut = $state(false);
+
+    // Keep track of the final total before clearing the cart
     let finalTotal = $state(0);
     let finalItemCount = $state(0);
 
@@ -16,18 +19,19 @@
     }, 0));
 
     function handleCheckout() {
+        // Capture totals before clearing
         finalTotal = totalPrice;
         finalItemCount = totalItems;
+        
+        // Empty out the cart immediately when proceeding to checkout
         cart.clear();
+        
+        // Open the checkout mockup view
         isCheckingOut = true;
     }
 
     function handleFinishOrder() {
         isCheckingOut = false;
-        onClose();
-    }
-
-    function handleExploreStore() {
         onClose();
     }
 </script>
@@ -41,7 +45,7 @@
         onclick={onClose}
     ></div>
 
-    <!-- Modal Drawer -->
+    <!-- Modal Drawer (Slide-over from right) -->
     <div class="fixed right-0 top-0 h-full w-full max-w-md bg-[#0B0F19] border-l border-slate-800 text-white z-50 shadow-2xl flex flex-col p-6 animate-in slide-in-from-right duration-200">
         
         <!-- Header -->
@@ -116,16 +120,16 @@
                         Explora el catálogo retro y añade sets de keycaps, publicaciones o kits.
                     </p>
                 </div>
-                <a 
+                <a
                     href="/tienda"
-                    onclick={handleExploreStore}
-                    class="mt-4 px-6 py-2.5 rounded-xl bg-cyan-400 text-slate-950 font-bold text-sm hover:bg-cyan-300 transition-all cursor-pointer shadow-lg shadow-cyan-500/20 text-center inline-block"
+                    onclick={onClose}
+                    class="mt-4 px-6 py-2.5 rounded-xl bg-cyan-400 text-slate-950 font-bold text-sm hover:bg-cyan-300 transition-all cursor-pointer shadow-lg shadow-cyan-500/20"
                 >
                     Explorar Tienda
                 </a>
             </div>
         {:else}
-            <!-- Filled State -->
+            <!-- Filled State / Item List -->
             <div class="flex-1 overflow-y-auto py-4 space-y-3">
                 {#each $cart as item (item.id)}
                     <div class="flex items-center justify-between p-3 rounded-xl border border-slate-800 bg-slate-900/60">

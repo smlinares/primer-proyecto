@@ -50,8 +50,7 @@
     let current = $derived(activeTab !== 'matrix' ? historyData[activeTab] : null);
 </script>
 
-<section class="py-6 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto">
-    <div class="min-h-screen bg-[#070A12] px-8 py-12 text-white font-sans">
+<div class="min-h-screen bg-[#070A12] px-8 py-12 text-white font-sans">
     <div class="mx-auto flex max-w-7xl flex-col gap-8">
         
         <!-- Header Section -->
@@ -312,4 +311,3 @@
         </div>
     </div>
 </div>
-</section>

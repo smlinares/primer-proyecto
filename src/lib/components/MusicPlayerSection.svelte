@@ -9,21 +9,71 @@
                 id: 1, 
                 title: "Unauthorized Design", 
                 artist: "Hello Meteor", 
-                album: "Winter Office Hours", 
-                duration: "04:12", 
+                album: "Community Broadcasting: Winter Office Hours", 
+                duration: "03:52", 
                 year: "2023", 
-                image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60",
+                image: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/3e/e2/70/3ee2705c-8c8e-2995-6599-a651ab9ea288/artwork.jpg/100x100bb.jpg",
                 youtubeId: "n0A-YAWCdZc" 
             },
             { 
                 id: 2, 
                 title: "Comet", 
                 artist: "The Midnight", 
-                album: "Endless Summer", 
-                duration: "03:45", 
+                album: "Endless Summer (5 Year Anniversary Edition)", 
+                duration: "05:17", 
                 year: "2021", 
-                image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=500&auto=format&fit=crop&q=60",
+                image: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/07/4d/be/074dbef3-cfb4-48e0-b70b-ef546b73f51f/196250187759_cover.jpg/100x100bb.jpg",
                 youtubeId: "edaF3oWzqcY" 
+            },
+            {
+                id: 3,
+                title: "Cascade Nights",
+                artist: "Hello Meteor",
+                album: "The Department of Marine Sciences",
+                duration: "04:00",
+                year: "2022",
+                image: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/52/cd/ad/52cdad9f-b2bc-f645-5d36-afc6d84636ab/artwork.jpg/100x100bb.jpg",
+                youtubeId: "RRLRwBAdb44"
+            },
+            {
+                id: 4,
+                title: "Heart's In the Right Place",
+                artist: "The American English",
+                album: "Hearts In the Right Place - Single",
+                duration: "05:07",
+                year: "2024",
+                image: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/08/e3/ac/08e3acd8-2893-b052-6e1f-946302354083/artwork.jpg/100x100bb.jpg",
+                youtubeId: "hXTsGfEMY5c"
+            },
+            {
+                id: 5,
+                title: "Running In The Night",
+                artist: "FM-84",
+                album: "Atlas",
+                duration: "04:30",
+                year: "2016",
+                image: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/82/9a/7f/829a7f0d-7819-5e2a-7976-5a24e68450ae/872132121799_cover.jpg/100x100bb.jpg",
+                youtubeId: "lB_XmsyiL-I"
+            },
+            {
+                id: 6,
+                title: "Because The Night",
+                artist: "The Midnight",
+                album: "Horror Show - EP",
+                duration: "03:36",
+                year: "2021",
+                image: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d6/e7/a0/d6e7a05a-e68e-0f57-7977-da3c57a053ef/5054429148398.png/100x100bb.jpg",
+                youtubeId: "Oatqp_fWssY"
+            },
+            {
+                id: 7,
+                title: "Out Of Time",
+                artist: "Kalax",
+                album: "III",
+                duration: "04:55",
+                year: "2019",
+                image: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/89/35/7e/89357e03-5347-8e8c-d1c9-88f935b6263d/artwork.jpg/100x100bb.jpg",
+                youtubeId: "em1Ar8iq3d8"
             }
         ];
     }
@@ -32,6 +82,7 @@
 
     let currentTrackId = $state(1);
     let isPlaying = $state(false);
+    let isLooping = $state(false);
     let isTrackLoading = $state(true); // Start as loading initially
     let volume = $state(80);
     let currentTime = $state(0);
@@ -95,13 +146,16 @@
         if (player && player.setVolume) {
             player.setVolume(volume);
         }
-        isTrackLoading = false;
+        player?.playVideo();
     }
 
     function onPlayerStateChange(event: any) {
         if (event.data === 1) {
             isPlaying = true;
             isTrackLoading = false;
+        } else if (event.data === 0 && isLooping) {
+            player.seekTo(0, true);
+            player.playVideo();
         } else if (event.data === 2 || event.data === 0) {
             isPlaying = false;
             isTrackLoading = false;
@@ -120,6 +174,10 @@
             player.playVideo();
             isPlaying = true;
         }
+    }
+
+    function toggleLoop() {
+        isLooping = !isLooping;
     }
 
     function selectTrack(id: number) {
@@ -181,7 +239,7 @@
         <!-- Main Player Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <!-- Left Column: Vinyl & Current Track Details -->
-            <div class="lg:col-span-5 rounded-2xl border border-slate-800 bg-[#0B0F19] p-6 shadow-xl flex flex-col items-center text-center relative overflow-hidden">
+            <div class="lg:col-span-5 lg:min-h-[475px] rounded-2xl border border-slate-800 bg-[#0B0F19] p-6 shadow-xl flex flex-col items-center text-center relative overflow-hidden">
                 <!-- Centered Status Badge -->
                 <div class="absolute top-4 left-1/2 -translate-x-1/2">
                     <span class="px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wider border {isTrackLoading ? 'border-amber-500/40 text-amber-300 bg-amber-950/40 animate-pulse' : isPlaying ? 'border-emerald-500/40 text-emerald-300 bg-emerald-950/40' : 'border-rose-500/40 text-rose-300 bg-rose-950/40'}">
@@ -194,16 +252,18 @@
                 </div>
 
                 <!-- Vinyl Record Artwork -->
-                <div class="my-8 relative w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-slate-950 border-4 border-slate-800/80 shadow-2xl flex items-center justify-center {isPlaying ? 'animate-[spin_8s_linear_infinite]' : ''}">
-                    <div class="absolute inset-2 rounded-full border border-slate-800/60"></div>
-                    <div class="absolute inset-8 rounded-full border border-slate-800/40"></div>
-                    <div class="absolute inset-20 rounded-full border border-slate-800/20"></div>
-                    
-                    <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-cyan-500/50 shadow-inner">
+                <div class="my-8 relative w-56 h-56 sm:w-64 sm:h-64 rounded-full border border-slate-700/80 shadow-2xl shadow-black/60 flex items-center justify-center overflow-hidden {isPlaying ? 'animate-[spin_8s_linear_infinite]' : ''}"
+                    style="background: repeating-radial-gradient(circle at center, #252832 0px, #101218 2px, #080a0f 4px, #1a1d25 5px, #0b0d12 8px);">
+                    <div class="absolute inset-0 rounded-full pointer-events-none" style="background: radial-gradient(circle at 35% 28%, rgb(255 255 255 / 0.12), transparent 34%), linear-gradient(135deg, rgb(255 255 255 / 0.04), transparent 48%, rgb(0 0 0 / 0.35));"></div>
+                    <div class="absolute inset-3 rounded-full border border-white/10 pointer-events-none"></div>
+                    <div class="absolute inset-6 rounded-full border border-white/5 pointer-events-none"></div>
+
+                    <div class="relative z-10 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-[3px] border-slate-300/70 shadow-[0_0_18px_rgba(0,0,0,0.8)] ring-1 ring-black/80">
                         {#if currentTrack?.image}
-                            <img src={currentTrack.image} alt={currentTrack.title} class="w-full h-full object-cover" />
+                            <img src={currentTrack.image.replace('/100x100bb.jpg', '/600x600bb.jpg')} alt={`${currentTrack.title} album cover`} class="w-full h-full object-cover" />
                         {/if}
                     </div>
+                    <div aria-hidden="true" class="absolute z-20 w-2 h-2 rounded-full bg-[#050609] border border-slate-300/70 shadow-[0_0_0_2px_rgba(0,0,0,0.55)]"></div>
                 </div>
 
                 <div class="space-y-1.5 w-full">
@@ -305,6 +365,15 @@
                         class="text-slate-300 hover:text-white transition-colors cursor-pointer"
                     >
                         <Icon icon="lucide:skip-forward" width="20" />
+                    </button>
+                    <button
+                        onclick={toggleLoop}
+                        aria-label={isLooping ? 'Desactivar repetición' : 'Repetir canción'}
+                        aria-pressed={isLooping}
+                        title={isLooping ? 'Desactivar repetición' : 'Repetir canción'}
+                        class="transition-colors cursor-pointer {isLooping ? 'text-cyan-400' : 'text-slate-500 hover:text-white'}"
+                    >
+                        <Icon icon="lucide:repeat-1" width="20" />
                     </button>
                 </div>
 
